@@ -12,18 +12,25 @@ import javax.ws.rs.core.MediaType;
 
 public class LoginService {
 
-//    @GET
-//    public String loginDummy() {
-//        return "logged in";
-//    }
-
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public String loginDummy() {
+    public String loginDummy(UserDTO userDTO) {
+        UserDTO user = new UserDTO(userDTO.getUserName(), userDTO.getPassword());
+        System.out.println(user.getUserName());
+
         return "{\n" +
-                "  \"token\":  \"1234-1234-1234\", \n" +
-                "  \"user\":   \"Meron Brouwer\"\n" +
+                "  \"token\":  \""+userDTO.getPassword()+"\", \n" +
+                "  \"user\":   \""+userDTO.getUserName()+"\"\n" +
                 "}";
     }
+
+//    @POST
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String loginDummy() {
+//        return "{\n" +
+//                "  \"token\":  \"1234-1234-1234\", \n" +
+//                "  \"user\":   \"Meron Brouwer\"\n" +
+//                "}";
+//    }
 
 }

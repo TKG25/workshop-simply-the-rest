@@ -2,15 +2,19 @@ package nl.han.oose.dea.rest.services.dto;
 
 public class UserDTO {
 
-    private String userName,password;
+    private String user;
+    private String password;
 
-    public UserDTO(String userName, String password) {
-        this.userName = userName;
+    public UserDTO() {
+    }
+
+    public UserDTO(String user, String password) {
+        this.user = user;
         this.password = password;
     }
 
     public String getUserName() {
-        return userName;
+        return user;
     }
 
     public String getPassword() {
